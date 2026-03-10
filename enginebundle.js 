@@ -1,0 +1,59 @@
+// enginebundle.js
+
+const engine = new TouchEngine()
+
+let active = false
+let touchX = 0
+let touchY = 0
+
+function frameLoop(){
+
+  if(active){
+
+    const movement = engine.process(touchX,touchY)
+
+    applyMovement(movement)
+
+  }
+
+  requestAnimationFrame(frameLoop)
+
+}
+
+function applyMovement(move){
+
+  // aqui você usa o movimento da mira
+  console.log("MoveX:",move.x,"MoveY:",move.y)
+
+}
+
+document.addEventListener("pointerdown",(e)=>{
+
+  active = true
+  touchX = e.clientX
+  touchY = e.clientY
+
+})
+
+document.addEventListener("pointermove",(e)=>{
+
+  if(!active) return
+
+  const events = e.getCoalescedEvents ? e.getCoalescedEvents() : [e]
+
+  for(const ev of events){
+
+    touchX = ev.clientX
+    touchY = ev.clientY
+
+  }
+
+},{passive:true})
+
+document.addEventListener("pointerup",()=>{
+
+  active = false
+
+})
+
+requestAnimationFrame(frameLoop)
