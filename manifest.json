@@ -1,0 +1,21 @@
+{
+  "name": "ZS.XIS.vip",
+  "short_name": "ZS.XIS",
+  "description": "App para Free Fire",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#2d1d25",
+  "theme_color": "#ed8003",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
