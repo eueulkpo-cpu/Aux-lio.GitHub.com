@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ZS.XIS.vip</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+background:#2d1d25;
+display:flex;
+align-items:center;
+justify-content:center;
+height:100vh;
+color:hwb(0 100% 0%);
+}
+
+.container{
+max-width:340px;
+width:90%;
+background:hsl(311, 11%, 38%);
+border-radius:20px;
+padding:25px;
+box-sizing:border-box;
+box-shadow:
+0 0 40px hsla(10, 100%, 52%, 0.553),
+inset 0 0 20px hsl(0, 100%, 50%);
+}
+
+.loginTitle{
+text-align:center;
+font-size:28px;
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:14px;
+border-radius:12px;
+border:none;
+outline:none;
+margin-bottom:15px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:15px;
+border:none;
+border-radius:14px;
+background:linear-gradient(90deg,#000000,#040404);
+color:rgb(255, 252, 252);
+font-weight:bold;
+font-size:16px;
+}
+
+@media (max-width: 420px) {
+  .container {
+    padding: 18px;
+  }
+
+  .loginTitle {
+    font-size: 24px;
+  }
+
+  button {
+    padding: 14px;
+  }
+}
+
+.panel{
+display:none;
+}
+
+.profile{
+text-align:center;
+margin-bottom:20px;
+}
+
+.profile img{
+width:70px;
+border-radius:50%;
+}
+
+.card{
+background:#ed8003;
+border-radius:14px;
+padding:14px;
+margin-bottom:12px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.cardText{
+max-width:70%;
+}
+
+.toggle{
+width:45px;
+height:25px;
+}
+
+.openGame{
+margin-top:20px;
+background:linear-gradient(90deg,#0066ff,#00b7ff);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- LOGIN -->
+<div id="login">
+
+<div class="loginTitle">Login</div>
+
+<input id="key" type="password" placeholder="Senha">
+
+<button onclick="login()">Entrar</button>
+
+</div>
+
+<!-- PAINEL -->
+<div class="panel" id="panel">
+
+<div class="profile">
+
+<!-- <img src="https://i.imgur.com/1X6G6QX.png"> -->
+
+
+<h3>Zs.Xis-FF</h3>
+
+</div>
+
+<div class="card">
+<div class="cardText">
+<b>Precisão Full</b><br>
+Aumenta a precisão da mira
+</div>
+<input type="checkbox" class="toggle" id="precision">
+</div>
+
+<div class="card">
+<div class="cardText">
+<b>Reduzir recuo</b><br>
+Remove parte do recuo
+</div>
+<input type="checkbox" class="toggle" id="recoil">
+</div>
+
+<div class="card">
+<div class="cardText">
+<b>Remover Input Lag</b><br>
+Deixa o toque mais rápido
+</div>
+<input type="checkbox" class="toggle" id="lag">
+</div>
+
+<div class="card">
+<div class="cardText">
+<b>Ativar Engine</b><br>
+Ativa o engine.cpp
+</div>
+<input type="checkbox" class="toggle" id="engine">
+</div>
+
+<button class="openGame" onclick="openGame()">
+ABRIR O FREE FIRE
+</button>
+
+</div>
+
+</div>
+
+<script src="engine.js"></script>
+<script src="engineBundle.js"></script>
+<script src="script.js"></script>
+<script src="engine.cpp"></script>
+</body>
+</html>
